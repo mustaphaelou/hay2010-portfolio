@@ -4,6 +4,15 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   output: 'standalone',
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.tgcc.ma',
+        pathname: '/dataup/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

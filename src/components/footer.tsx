@@ -24,6 +24,11 @@ export function Footer() {
                                 </Link>
                             </li>
                             <li>
+                                <Link href="/clients" className="text-sm text-gray-300 hover:text-white transition-colors">
+                                    Clients
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href="/qualifications" className="text-sm text-gray-300 hover:text-white transition-colors">
                                     Qualifications
                                 </Link>
@@ -76,7 +81,7 @@ export function Footer() {
                             </li>
                             <li>
                                 <Link href="/zones" className="text-sm text-gray-300 hover:text-white transition-colors">
-                                    Zones d&apos;Intervention
+                                    Zones d’Intervention
                                 </Link>
                             </li>
                         </ul>

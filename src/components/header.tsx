@@ -9,6 +9,7 @@ import { Menu, X } from "lucide-react";
 const navigation = [
     { name: "Services", href: "/services" },
     { name: "Réalisations", href: "/projects" },
+    { name: "Clients", href: "/clients" },
     { name: "Qualifications", href: "/qualifications" },
     { name: "À Propos", href: "/about" },
     { name: "Zones", href: "/zones" },
@@ -29,8 +30,8 @@ export function Header() {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-                    ? "bg-white/80 backdrop-blur-xl shadow-sm"
-                    : "bg-transparent"
+                ? "bg-white/80 backdrop-blur-xl shadow-sm"
+                : "bg-transparent"
                 }`}
         >
             <div className="container mx-auto px-6">
@@ -53,7 +54,7 @@ export function Header() {
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                className={`text-sm font-medium transition-colors hover:opacity-70 ${isScrolled ? "text-[#171a20]" : "text-[#171a20]"
+                                className={`text-sm font-medium transition-colors hover:opacity-70 ${isScrolled ? "text-[#171a20]" : "text-white lg:text-[#171a20] dark:lg:text-white"
                                     }`}
                             >
                                 {item.name}

@@ -88,6 +88,8 @@
   --sidebar-accent-foreground: oklch(0.12 0 0);
   --sidebar-border: oklch(0.92 0 0);
   --sidebar-ring: oklch(0.12 0 0);
+
+  color-scheme: light dark;
 }
 
 .dark {
@@ -129,6 +131,12 @@
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  /* Improved focus indicators */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2;
   }
 }
 
@@ -180,6 +188,17 @@ html {
 
 .animate-fade-in {
   animation: fade-in 1.2s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-bounce {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .animate-delay-100 {

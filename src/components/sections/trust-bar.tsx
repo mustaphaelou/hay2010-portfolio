@@ -54,8 +54,8 @@ export function TrustBar() {
         <section className="min-h-screen flex items-center snap-section bg-white">
             <div className="container mx-auto px-6 py-24">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
-                    {stats.map((stat, index) => (
-                        <div key={index} className="text-center">
+                    {stats.map((stat) => (
+                        <div key={stat.label} className="text-center">
                             <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                             <p className="mt-2 text-sm text-[#5c5e62]">
                                 {stat.label}

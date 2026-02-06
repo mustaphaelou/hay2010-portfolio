@@ -45,9 +45,9 @@ export function CertificationsSection() {
 
                 {/* Certifications Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {certifications.map((cert, index) => (
+                    {certifications.map((cert) => (
                         <div
-                            key={index}
+                            key={cert.title}
                             className="group p-6 rounded-2xl bg-muted/50 border-2 border-transparent hover:border-[#F37021] hover:bg-card hover:shadow-lg transition-all duration-300 text-center"
                         >
                             <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">

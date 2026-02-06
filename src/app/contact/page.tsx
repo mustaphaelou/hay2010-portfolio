@@ -66,7 +66,7 @@ export default function ContactPage() {
                             Parlons de Votre Projet
                         </h1>
                         <p className="text-xl text-white/70">
-                            Notre équipe d&apos;experts est à votre disposition pour étudier vos besoins et vous proposer des solutions adaptées.
+                            Notre équipe d’experts est à votre disposition pour étudier vos besoins et vous proposer des solutions adaptées.
                         </p>
                     </div>
                 </div>
@@ -87,34 +87,35 @@ export default function ContactPage() {
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div className="space-y-2">
                                                 <Label htmlFor="firstName">Prénom</Label>
-                                                <Input id="firstName" placeholder="Votre prénom" required />
+                                                <Input id="firstName" name="given-name" autoComplete="given-name" placeholder="Votre prénom…" required />
                                             </div>
                                             <div className="space-y-2">
                                                 <Label htmlFor="lastName">Nom</Label>
-                                                <Input id="lastName" placeholder="Votre nom" required />
+                                                <Input id="lastName" name="family-name" autoComplete="family-name" placeholder="Votre nom…" required />
                                             </div>
                                         </div>
 
                                         <div className="space-y-2">
                                             <Label htmlFor="email">Email</Label>
-                                            <Input id="email" type="email" placeholder="votre@email.com" required />
+                                            <Input id="email" name="email" type="email" autoComplete="email" placeholder="votre@email.com" required spellCheck={false} />
                                         </div>
 
                                         <div className="space-y-2">
                                             <Label htmlFor="phone">Téléphone</Label>
-                                            <Input id="phone" type="tel" placeholder="06 XX XX XX XX" />
+                                            <Input id="phone" name="tel" type="tel" autoComplete="tel" placeholder="06 XX XX XX XX" />
                                         </div>
 
                                         <div className="space-y-2">
                                             <Label htmlFor="subject">Sujet</Label>
-                                            <Input id="subject" placeholder="Type de projet" required />
+                                            <Input id="subject" name="subject" placeholder="Type de projet…" required />
                                         </div>
 
                                         <div className="space-y-2">
                                             <Label htmlFor="message">Message</Label>
                                             <Textarea
                                                 id="message"
-                                                placeholder="Décrivez votre projet..."
+                                                name="message"
+                                                placeholder="Décrivez votre projet…"
                                                 rows={5}
                                                 required
                                             />
@@ -126,7 +127,7 @@ export default function ContactPage() {
                                             className="w-full bg-[#F37021] hover:bg-[#d65f18] text-white"
                                         >
                                             {isSubmitting ? (
-                                                "Envoi en cours..."
+                                                "Envoi en cours…"
                                             ) : (
                                                 <>
                                                     <Send className="w-4 h-4 mr-2" />
@@ -145,8 +146,8 @@ export default function ContactPage() {
                                 Nos Coordonnées
                             </h2>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-                                {contactInfo.map((info, index) => (
-                                    <Card key={index} className="border-border/50 hover:border-[#F37021]/30 transition-colors">
+                                {contactInfo.map((info) => (
+                                    <Card key={info.title} className="border-border/50 hover:border-[#F37021]/30 transition-colors">
                                         <CardContent className="p-6">
                                             <div className="w-12 h-12 rounded-xl bg-[#31548E]/10 flex items-center justify-center mb-4">
                                                 <info.icon className="w-6 h-6 text-[#31548E]" />

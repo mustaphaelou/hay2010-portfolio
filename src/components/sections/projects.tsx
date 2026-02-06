@@ -27,9 +27,9 @@ const projects = [
 export function ProjectsSection() {
     return (
         <>
-            {projects.map((project, index) => (
+            {projects.map((project) => (
                 <section
-                    key={index}
+                    key={project.title}
                     className={`relative min-h-screen flex flex-col justify-between snap-section bg-gradient-to-b ${project.bg}`}
                 >
                     {/* Content */}
@@ -65,11 +65,11 @@ export function ProjectsSection() {
                     </div>
 
                     {/* Scroll indicator */}
-                    {index < projects.length - 1 && (
-                        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-                            <ChevronDown className="w-8 h-8 text-[#5c5e62]" />
-                        </div>
-                    )}
+                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce empty:hidden">
+                        {projects.indexOf(project) < projects.length - 1 && (
+                            <ChevronDown className="w-8 h-8 text-[#5c5e62]" aria-hidden="true" />
+                        )}
+                    </div>
                 </section>
             ))}
         </>

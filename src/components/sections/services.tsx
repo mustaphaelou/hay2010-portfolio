@@ -51,9 +51,9 @@ const services = [
 export function ServicesSection() {
     return (
         <>
-            {services.map((service, index) => (
+            {services.map((service) => (
                 <section
-                    key={index}
+                    key={service.title}
                     className={`relative min-h-screen flex flex-col justify-between snap-section bg-gradient-to-b ${service.bg}`}
                 >
                     {/* Content */}
@@ -88,11 +88,11 @@ export function ServicesSection() {
                     </div>
 
                     {/* Scroll indicator */}
-                    {index < services.length - 1 && (
-                        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-                            <ChevronDown className="w-8 h-8 text-[#5c5e62]" />
-                        </div>
-                    )}
+                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce empty:hidden">
+                        {services.indexOf(service) < services.length - 1 && (
+                            <ChevronDown className="w-8 h-8 text-[#5c5e62]" aria-hidden="true" />
+                        )}
+                    </div>
                 </section>
             ))}
         </>

@@ -41,15 +41,15 @@ export function ValuesSection() {
                         Pourquoi Choisir HAY 2010?
                     </Badge>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 font-[family-name:var(--font-space-grotesk)]">
-                        L&apos;Excellence au Service de Vos Projets
+                        L’Excellence au Service de Vos Projets
                     </h2>
                 </div>
 
                 {/* Values Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {values.map((value, index) => (
+                    {values.map((value) => (
                         <div
-                            key={index}
+                            key={value.title}
                             className="group text-center p-8 rounded-2xl bg-card border border-border/50 hover:border-[#F37021]/30 hover:shadow-xl transition-all duration-300"
                         >
                             {/* Icon */}
