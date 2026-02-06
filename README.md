@@ -1,90 +1,36 @@
-# HAY2010 Portfolio Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A complete, responsive website for HAY2010 - Travaux d'électrification & éclairage public.
+## Getting Started
 
-## Quick Start
+First, run the development server:
 
-**View locally:**
 ```bash
-npx serve
-```
-Then open http://localhost:3000
-
-## Project Structure
-
-```
-hay2010_portfolio/
-├── index.html          # Homepage (10 sections)
-├── services.html       # Services page (6 service details)
-├── projects.html       # Portfolio/case studies
-├── qualifications.html # Certifications & qualifications
-├── about.html          # Company history & values
-├── contact.html        # Contact form (Formspree ready)
-├── zones.html          # Service coverage areas
-├── styles/
-│   ├── main.css        # Design system & components
-│   └── animations.css  # Scroll animations
-└── scripts/
-    └── main.js         # Navigation, animations, form validation
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Brand Colors
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-| Color | Hex | Usage |
-|-------|-----|-------|
-| Deep Grid Blue | `#003B5C` | Primary, headers |
-| Structural Green | `#1C6E3E` | Secondary |
-| Volt Cyan | `#00A9E0` | Accent, CTAs |
-| Soft Concrete | `#F5F7FA` | Backgrounds |
-| Graphite | `#1A1F2A` | Text |
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Typography
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- **Headings:** Space Grotesk (Google Fonts)
-- **Body:** Inter (Google Fonts)
+## Learn More
 
-## Features
+To learn more about Next.js, take a look at the following resources:
 
-- ✅ Semantic HTML5
-- ✅ Mobile-responsive (Grid + Flexbox)
-- ✅ Scroll animations
-- ✅ Working contact form (Formspree)
-- ✅ SEO optimized
-- ✅ Schema.org markup
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Deployment
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-### Option 1: Netlify (Recommended)
-1. Go to [netlify.com/drop](https://app.netlify.com/drop)
-2. Drag the entire `hay2010_portfolio` folder
-3. Done! Your site is live.
+## Deploy on Vercel
 
-### Option 2: Vercel
-```bash
-npx vercel --prod
-```
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### Option 3: GitHub Pages
-1. Create a GitHub repository
-2. Push the code
-3. Go to Settings > Pages > Source: main branch
-
-### Option 4: Surge.sh
-```bash
-npx surge . your-site-name.surge.sh
-```
-
-## Contact Form Setup
-
-The contact form uses Formspree. To activate:
-1. Create account at [formspree.io](https://formspree.io)
-2. Create a new form
-3. Replace `yourformid` in `contact.html` with your form ID
-
-```html
-<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-```
-
-## License
-
-© 2024 HAY 2010. All rights reserved.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
