@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Zones d'intervention HAY 2010 - Électrification et génie climatique dans tout le Maroc.">
+    <title>Zones d'Intervention | HAY 2010</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="logo">HAY<span>2010</span></a>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li><a href="index.html" class="nav__link">Accueil</a></li>
+                        <li><a href="services.html" class="nav__link">Services</a></li>
+                        <li><a href="projects.html" class="nav__link">Réalisations</a></li>
+                        <li><a href="qualifications.html" class="nav__link">Qualifications</a></li>
+                        <li><a href="about.html" class="nav__link">À Propos</a></li>
+                        <li><a href="contact.html" class="nav__link">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <div class="container">
+                <div data-animate="fade-up">
+                    <span class="section__subtitle" style="color: var(--color-accent);">Zones d'Intervention</span>
+                    <h1 class="about-hero__title">Intervention dans Tout le Maroc</h1>
+                    <p style="max-width: 700px; opacity: 0.8; font-size: var(--text-lg);">Notre équipe intervient sur
+                        l'ensemble du territoire national.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section__header" data-animate="fade-up">
+                    <span class="section__subtitle">Couverture Nationale</span>
+                    <h2 class="section__title">12 Régions Couvertes</h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); margin-top: var(--space-10);"
+                    data-stagger>
+                    <div class="coverage__city">Rabat-Salé-Kénitra</div>
+                    <div class="coverage__city">Casablanca-Settat</div>
+                    <div class="coverage__city">Marrakech-Safi</div>
+                    <div class="coverage__city">Fès-Meknès</div>
+                    <div class="coverage__city">Tanger-Tétouan-Al Hoceima</div>
+                    <div class="coverage__city">Oriental</div>
+                    <div class="coverage__city">Béni Mellal-Khénifra</div>
+                    <div class="coverage__city">Souss-Massa</div>
+                    <div class="coverage__city">Drâa-Tafilalet</div>
+                    <div class="coverage__city">Laâyoune-Sakia El Hamra</div>
+                    <div class="coverage__city">Guelmim-Oued Noun</div>
+                    <div class="coverage__city">Dakhla-Oued Ed-Dahab</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: var(--color-white);">
+            <div class="container">
+                <div class="section__header" data-animate="fade-up">
+                    <span class="section__subtitle">Siège Social</span>
+                    <h2 class="section__title">Basé à Rabat</h2>
+                </div>
+                <div style="background: var(--color-primary); height: 400px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin-top: var(--space-8);"
+                    data-animate="fade-up">
+                    <div style="text-align: center; color: white;">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" style="margin-bottom: var(--space-4);">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <p style="font-size: var(--text-xl);">Rabat, Maroc<br><small style="opacity: 0.7;">Quartier
+                                Industriel</small></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-section__title">Un Projet dans Votre Région?</h2>
+                <p class="cta-section__subtitle">Contactez-nous pour une étude gratuite.</p>
+                <div class="cta-section__buttons">
+                    <a href="contact.html" class="btn btn--primary btn--lg">Demander un Devis</a>
+                    <a href="tel:+212537281111" class="btn btn--outline btn--lg">05 37 28 11 11</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__bottom">
+                <p>&copy; 2024 HAY 2010. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
