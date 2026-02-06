@@ -25,9 +25,9 @@ export function CoverageSection() {
 
                 {/* Cities Grid */}
                 <div className="flex flex-wrap justify-center gap-3 max-w-3xl">
-                    {cities.map((city, index) => (
+                    {cities.map((city) => (
                         <span
-                            key={index}
+                            key={city}
                             className="px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full text-sm text-[#171a20]"
                         >
                             {city}

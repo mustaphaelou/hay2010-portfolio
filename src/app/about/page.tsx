@@ -45,10 +45,10 @@ export default function AboutPage() {
                             À Propos
                         </Badge>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-[family-name:var(--font-space-grotesk)]">
-                            Plus de 20 Ans d&apos;Excellence au Maroc
+                            Plus de 20 Ans d’Excellence au Maroc
                         </h1>
                         <p className="text-xl text-white/70">
-                            HAY 2010 est une entreprise marocaine spécialisée dans le génie climatique, l&apos;électrification et l&apos;éclairage public.
+                            HAY 2010 est une entreprise marocaine spécialisée dans le génie climatique, l’électrification et l’éclairage public.
                         </p>
                     </div>
                 </div>
@@ -63,14 +63,14 @@ export default function AboutPage() {
                                 Notre Histoire
                             </Badge>
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 font-[family-name:var(--font-space-grotesk)]">
-                                Une Passion pour l&apos;Excellence
+                                Une Passion pour l’Excellence
                             </h2>
                             <div className="space-y-4 text-muted-foreground">
                                 <p>
-                                    Fondée en 2004, HAY 2010 s&apos;est imposée comme un acteur majeur du secteur de l&apos;électrification et du génie climatique au Maroc. Notre engagement envers la qualité et l&apos;innovation nous a permis de bâtir une réputation solide auprès des collectivités, industries et entreprises du secteur tertiaire.
+                                    Fondée en 2004, HAY 2010 s’est imposée comme un acteur majeur du secteur de l’électrification et du génie climatique au Maroc. Notre engagement envers la qualité et l’innovation nous a permis de bâtir une réputation solide auprès des collectivités, industries et entreprises du secteur tertiaire.
                                 </p>
                                 <p>
-                                    Aujourd&apos;hui, avec plus de 100 collaborateurs qualifiés et une présence nationale, nous continuons à repousser les limites de l&apos;excellence technique pour offrir des solutions durables et performantes à nos clients.
+                                    Aujourd’hui, avec plus de 100 collaborateurs qualifiés et une présence nationale, nous continuons à repousser les limites de l’excellence technique pour offrir des solutions durables et performantes à nos clients.
                                 </p>
                             </div>
                         </div>
@@ -80,7 +80,7 @@ export default function AboutPage() {
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="text-center text-white">
                                         <div className="text-6xl font-bold mb-2">20+</div>
-                                        <div className="text-xl">Années d&apos;Expérience</div>
+                                        <div className="text-xl">Années d’Expérience</div>
                                     </div>
                                 </div>
                             </div>
@@ -106,33 +106,36 @@ export default function AboutPage() {
                         <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border hidden lg:block" />
 
                         <div className="space-y-12">
-                            {milestones.map((milestone, index) => (
-                                <div
-                                    key={index}
-                                    className={`flex items-center gap-8 ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                                        }`}
-                                >
-                                    <div className={`flex-1 ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
-                                        <Card className="inline-block border-border/50 hover:border-[#F37021]/30 transition-colors">
-                                            <CardContent className="p-6">
-                                                <div className="text-sm font-medium text-[#F37021] mb-1">
-                                                    {milestone.year}
-                                                </div>
-                                                <h3 className="text-lg font-bold text-foreground mb-2">
-                                                    {milestone.title}
-                                                </h3>
-                                                <p className="text-sm text-muted-foreground">
-                                                    {milestone.description}
-                                                </p>
-                                            </CardContent>
-                                        </Card>
+                            {milestones.map((milestone) => {
+                                const index = milestones.indexOf(milestone);
+                                return (
+                                    <div
+                                        key={milestone.year}
+                                        className={`flex items-center gap-8 ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                                            }`}
+                                    >
+                                        <div className={`flex-1 ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
+                                            <Card className="inline-block border-border/50 hover:border-[#F37021]/30 transition-colors">
+                                                <CardContent className="p-6">
+                                                    <div className="text-sm font-medium text-[#F37021] mb-1">
+                                                        {milestone.year}
+                                                    </div>
+                                                    <h3 className="text-lg font-bold text-foreground mb-2">
+                                                        {milestone.title}
+                                                    </h3>
+                                                    <p className="text-sm text-muted-foreground">
+                                                        {milestone.description}
+                                                    </p>
+                                                </CardContent>
+                                            </Card>
+                                        </div>
+
+                                        <div className="w-4 h-4 rounded-full bg-[#F37021] border-4 border-background hidden lg:block relative z-10" />
+
+                                        <div className="flex-1 hidden lg:block" />
                                     </div>
-
-                                    <div className="w-4 h-4 rounded-full bg-[#F37021] border-4 border-background hidden lg:block relative z-10" />
-
-                                    <div className="flex-1 hidden lg:block" />
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
@@ -151,8 +154,8 @@ export default function AboutPage() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {values.map((value, index) => (
-                            <Card key={index} className="text-center border-border/50 hover:border-[#F37021]/30 hover:shadow-lg transition-all">
+                        {values.map((value) => (
+                            <Card key={value.title} className="text-center border-border/50 hover:border-[#F37021]/30 hover:shadow-lg transition-all">
                                 <CardContent className="p-8">
                                     <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#31548E] to-[#1a3a5c] flex items-center justify-center mx-auto mb-6">
                                         <value.icon className="w-8 h-8 text-white" />

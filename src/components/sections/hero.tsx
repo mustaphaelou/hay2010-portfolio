@@ -31,7 +31,7 @@ export function HeroSection() {
                     Électrification • Éclairage Public • Génie Climatique
                 </p>
                 <p className="text-sm text-[#5c5e62]/80 animate-fade-up animate-delay-200">
-                    Plus de 20 ans d&apos;expertise au Maroc
+                    Plus de 20 ans d’expertise au Maroc
                 </p>
             </div>
 
@@ -57,6 +57,7 @@ export function HeroSection() {
             <button
                 onClick={scrollToNext}
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce"
+                aria-label="Défiler vers le bas"
             >
                 <ChevronDown className="w-8 h-8 text-[#5c5e62]" />
             </button>

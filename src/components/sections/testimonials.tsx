@@ -31,9 +31,9 @@ export function TestimonialsSection() {
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl">
-                    {testimonials.map((testimonial, index) => (
+                    {testimonials.map((testimonial) => (
                         <div
-                            key={index}
+                            key={testimonial.author}
                             className="bg-white p-8 rounded-sm shadow-sm"
                         >
                             <Quote className="w-8 h-8 text-[#5c5e62]/30 mb-6" />
