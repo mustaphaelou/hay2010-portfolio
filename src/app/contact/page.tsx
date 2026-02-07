@@ -8,6 +8,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { useState } from "react";
+import { sendEmail } from "./actions";
+
 
 const contactInfo = [
     {
@@ -39,13 +41,26 @@ const contactInfo = [
 export default function ContactPage() {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Simulate form submission
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-        setIsSubmitting(false);
-        alert("Message envoyé avec succès!");
+
+        try {
+            const formData = new FormData(e.currentTarget);
+            const result = await sendEmail(formData);
+
+            if (result.success) {
+                alert("Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.");
+                (e.target as HTMLFormElement).reset();
+            } else {
+                alert(`Erreur: ${result.error || "Impossible d'envoyer le message."}`);
+            }
+        } catch (error) {
+            console.error("Form error:", error);
+            alert("Une erreur est survenue lors de l'envoi du message.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
