@@ -5,6 +5,13 @@ import { ChevronDown, TrendingUp } from "lucide-react";
 
 const projects = [
     {
+        title: "Ville de Casablanca",
+        category: "Éclairage Public LED",
+        stats: "Luminaires ITALO & STYLO",
+        bg: "from-[#002a42] to-[#31548E]",
+        image: "/images/street-lighting/casablanca-lighting-1.jpg",
+    },
+    {
         title: "Commune de Témara",
         category: "Éclairage Public",
         stats: "450 luminaires LED",
@@ -30,18 +37,27 @@ export function ProjectsSection() {
             {projects.map((project) => (
                 <section
                     key={project.title}
-                    className={`relative min-h-screen flex flex-col justify-between snap-section bg-gradient-to-b ${project.bg}`}
+                    className={`relative min-h-screen flex flex-col justify-between snap-section ${!project.image ? `bg-gradient-to-b ${project.bg}` : ''}`}
                 >
-                    {/* Content */}
-                    <div className="flex-1 flex flex-col items-center justify-center text-center px-6 pt-20">
+                    {project.image && (
+                        <div className="absolute inset-0 z-0">
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                className="w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-black/40" />
+                        </div>
+                    )}
+                    <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 pt-20">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full text-sm text-[#5c5e62] mb-8">
                             <TrendingUp className="w-4 h-4" />
                             {project.category}
                         </div>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#171a20] tracking-tight mb-4">
+                        <h2 className={`text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-4 ${project.image ? 'text-white' : 'text-[#171a20]'}`}>
                             {project.title}
                         </h2>
-                        <p className="text-lg md:text-xl text-[#5c5e62]">
+                        <p className={`text-lg md:text-xl ${project.image ? 'text-white/80' : 'text-[#5c5e62]'}`}>
                             {project.stats}
                         </p>
                     </div>

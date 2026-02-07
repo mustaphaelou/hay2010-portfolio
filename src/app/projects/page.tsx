@@ -6,6 +6,16 @@ import { TrendingUp, ArrowRight } from "lucide-react";
 
 const projects = [
     {
+        id: "casablanca",
+        title: "Ville de Casablanca - La Corniche",
+        category: "Éclairage Public LED",
+        stats: "Luminaires ITALO & STYLO • 50% économie d'énergie",
+        description: "Rénovation de l'éclairage public du Boulevard de la Corniche et des entrées de ville. Installation de luminaires LED haute performance pour une meilleure visibilité et sécurité.",
+        gradient: "from-[#002a42] to-[#31548E]",
+        year: "2023",
+        image: "/images/street-lighting/casablanca-lighting-1.jpg",
+    },
+    {
         id: "temara",
         title: "Commune de Témara",
         category: "Éclairage Public",
@@ -97,6 +107,13 @@ export default function ProjectsPage() {
                                 className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
                             >
                                 <div className={`h-56 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
+                                    {project.image && (
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        />
+                                    )}
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                                     <Badge className="absolute top-4 left-4 bg-[#F37021] text-white border-0">
                                         {project.category}
