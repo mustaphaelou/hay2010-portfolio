@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Outfit, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
-const inter = Inter({
-  variable: "--font-inter",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
   display: "swap",
 });
@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}
+        className={`${outfit.variable} ${dmSans.variable} font-sans antialiased`}
       >
         <Header />
         <main className="min-h-screen">
