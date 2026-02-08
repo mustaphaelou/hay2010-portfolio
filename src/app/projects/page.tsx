@@ -4,72 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { TrendingUp, ArrowRight } from "lucide-react";
 
-const projects = [
-    {
-        id: "casablanca",
-        title: "Ville de Casablanca - La Corniche",
-        category: "Éclairage Public LED",
-        stats: "Luminaires ITALO & STYLO • 50% économie d'énergie",
-        description: "Rénovation de l'éclairage public du Boulevard de la Corniche et des entrées de ville. Installation de luminaires LED haute performance pour une meilleure visibilité et sécurité.",
-        gradient: "from-[#002a42] to-[#31548E]",
-        year: "2023",
-        image: "/images/street-lighting/casablanca-lighting-1.jpg",
-    },
-    {
-        id: "temara",
-        title: "Commune de Témara",
-        category: "Éclairage Public",
-        stats: "450 luminaires LED • 60% réduction consommation",
-        description: "Rénovation complète du réseau d'éclairage public de la commune avec installation de luminaires LED haute performance et système de télégestion.",
-        gradient: "from-[#31548E] to-[#00A9E0]",
-        year: "2023",
-    },
-    {
-        id: "johra",
-        title: "Zone Industrielle Aïn Johra",
-        category: "Électrification HTA",
-        stats: "12 km réseau HTA • 8 postes de transformation",
-        description: "Création d'un réseau de distribution électrique haute tension pour alimenter la nouvelle zone industrielle avec 8 postes de transformation MT/BT.",
-        gradient: "from-[#1C6E3E] to-[#00A9E0]",
-        year: "2022",
-    },
-    {
-        id: "marjane",
-        title: "Centre Commercial Marjane",
-        category: "Génie Climatique",
-        stats: "15,000 m² climatisés • Système centralisé",
-        description: "Installation d'un système de climatisation centralisé VRV pour l'ensemble du centre commercial avec gestion technique centralisée.",
-        gradient: "from-[#002a42] to-[#1C6E3E]",
-        year: "2023",
-    },
-    {
-        id: "rural",
-        title: "Programme PERG - Région Oriental",
-        category: "Électrification Rurale",
-        stats: "25 villages • 2,500 foyers raccordés",
-        description: "Électrification rurale dans le cadre du PERG pour raccorder les villages isolés de la région orientale au réseau national.",
-        gradient: "from-[#F37021] to-[#ED1C24]",
-        year: "2021",
-    },
-    {
-        id: "hopital",
-        title: "CHU Mohammed VI",
-        category: "Installation Électrique",
-        stats: "50,000 m² • Système de secours complet",
-        description: "Installation électrique complète avec tableaux TGBT, groupes électrogènes de secours et onduleurs pour la continuité de service.",
-        gradient: "from-[#31548E] to-[#F37021]",
-        year: "2022",
-    },
-    {
-        id: "solaire",
-        title: "Usine Textile Casablanca",
-        category: "Énergie Solaire",
-        stats: "500 kWc installés • 40% autoconsommation",
-        description: "Installation photovoltaïque en toiture pour réduire la facture énergétique et l'empreinte carbone de l'usine.",
-        gradient: "from-yellow-500 to-orange-500",
-        year: "2023",
-    },
-];
+import { projects } from "@/data/projects";
 
 export default function ProjectsPage() {
     return (
