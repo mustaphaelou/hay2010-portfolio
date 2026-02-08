@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -23,46 +24,62 @@ export default function RecrutementPage() {
 
     return (
         <main className="min-h-screen bg-white">
-            {/* Tesla-style Minimalist Hero */}
+            {/* Tesla-style Minimalist Hero with Banner Image */}
             <section className="section-fullscreen snap-section relative overflow-hidden">
                 {/* Clean background with subtle gradient */}
-                <div className="absolute inset-0 bg-gradient-to-b from-neutral-50 to-white"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-neutral-50"></div>
 
                 <div className="container mx-auto px-6 h-full flex items-center justify-center relative z-10">
-                    <div className="text-center max-w-4xl mx-auto space-y-8 animate-fade-up">
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[var(--brand-primary)] leading-[1.1]">
-                            Construisons l'avenir
-                        </h1>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl w-full animate-fade-up">
+                        {/* Left: Text Content */}
+                        <div className="space-y-8 text-center lg:text-left">
+                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--brand-primary)] leading-[1.1]">
+                                Construisons l'avenir
+                            </h1>
 
-                        <p className="text-xl md:text-2xl text-neutral-600 max-w-2xl mx-auto font-light">
-                            Rejoignez notre équipe et participez à des projets qui façonnent le Maroc de demain
-                        </p>
+                            <p className="text-xl md:text-2xl text-neutral-600 font-light">
+                                Rejoignez notre équipe et participez à des projets qui façonnent le Maroc de demain
+                            </p>
 
-                        <div className="pt-8">
-                            <Button
-                                onClick={() => {
-                                    const formSection = document.getElementById('application-form');
-                                    formSection?.scrollIntoView({ behavior: 'smooth' });
-                                }}
-                                className="btn-tesla btn-tesla-primary h-12 px-10 text-base rounded-sm"
-                            >
-                                Postuler maintenant
-                            </Button>
+                            <div className="pt-4">
+                                <Button
+                                    onClick={() => {
+                                        const formSection = document.getElementById('application-form');
+                                        formSection?.scrollIntoView({ behavior: 'smooth' });
+                                    }}
+                                    className="btn-tesla btn-tesla-primary h-12 px-10 text-base rounded-sm"
+                                >
+                                    Postuler maintenant
+                                </Button>
+                            </div>
+
+                            {/* Minimal stats - Tesla style */}
+                            <div className="grid grid-cols-3 gap-8 pt-8 max-w-lg">
+                                <div className="text-center lg:text-left">
+                                    <div className="text-3xl md:text-4xl font-bold text-[var(--brand-primary)]">30+</div>
+                                    <div className="text-sm text-neutral-500 mt-1">Projets</div>
+                                </div>
+                                <div className="text-center lg:text-left border-x lg:border-x-0 lg:border-l border-neutral-200 lg:pl-8">
+                                    <div className="text-3xl md:text-4xl font-bold text-[var(--brand-primary)]">12</div>
+                                    <div className="text-sm text-neutral-500 mt-1">Villes</div>
+                                </div>
+                                <div className="text-center lg:text-left lg:border-l border-neutral-200 lg:pl-8">
+                                    <div className="text-3xl md:text-4xl font-bold text-[var(--brand-primary)]">15+</div>
+                                    <div className="text-sm text-neutral-500 mt-1">Années</div>
+                                </div>
+                            </div>
                         </div>
 
-                        {/* Minimal stats - Tesla style */}
-                        <div className="grid grid-cols-3 gap-8 pt-16 max-w-xl mx-auto">
-                            <div className="text-center">
-                                <div className="text-3xl md:text-4xl font-bold text-[var(--brand-primary)]">30+</div>
-                                <div className="text-sm text-neutral-500 mt-1">Projets</div>
-                            </div>
-                            <div className="text-center border-x border-neutral-200">
-                                <div className="text-3xl md:text-4xl font-bold text-[var(--brand-primary)]">12</div>
-                                <div className="text-sm text-neutral-500 mt-1">Villes</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-3xl md:text-4xl font-bold text-[var(--brand-primary)]">15+</div>
-                                <div className="text-sm text-neutral-500 mt-1">Années</div>
+                        {/* Right: Banner Image */}
+                        <div className="relative w-full h-[400px] lg:h-[600px] flex items-center justify-center">
+                            <div className="relative w-full h-full max-w-lg mx-auto animate-float">
+                                <Image
+                                    src="/images/recruitment-banner.png"
+                                    alt="Recrutement - Rejoignez HAY2010"
+                                    fill
+                                    className="object-contain drop-shadow-2xl"
+                                    priority
+                                />
                             </div>
                         </div>
                     </div>
@@ -96,10 +113,10 @@ export default function RecrutementPage() {
                                 <div key={step} className="flex items-center">
                                     <div
                                         className={`w-2 h-2 rounded-full transition-all duration-300 ${step === currentStep
-                                                ? 'w-8 bg-[var(--brand-primary)]'
-                                                : step < currentStep
-                                                    ? 'bg-[var(--brand-primary)]'
-                                                    : 'bg-neutral-300'
+                                            ? 'w-8 bg-[var(--brand-primary)]'
+                                            : step < currentStep
+                                                ? 'bg-[var(--brand-primary)]'
+                                                : 'bg-neutral-300'
                                             }`}
                                     />
                                     {step < 3 && <div className="w-8 h-px bg-neutral-200 mx-1" />}
