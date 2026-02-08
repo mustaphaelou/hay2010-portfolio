@@ -71,8 +71,8 @@ export default function RecrutementPage() {
                         </div>
 
                         {/* Right: Banner Image */}
-                        <div className="relative w-full h-[400px] lg:h-[600px] flex items-center justify-center">
-                            <div className="relative w-full h-full max-w-lg mx-auto animate-float">
+                        <div className="relative w-full h-[300px] lg:h-[450px] flex items-center justify-center">
+                            <div className="relative w-full h-full max-w-md mx-auto animate-float">
                                 <Image
                                     src="/images/recruitment-banner.png"
                                     alt="Recrutement - Rejoignez HAY2010"
