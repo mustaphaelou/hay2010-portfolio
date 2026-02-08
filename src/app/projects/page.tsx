@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { TrendingUp, ArrowRight } from "lucide-react";
+import { ChartLineData01Icon, ArrowRight01Icon } from "hugeicons-react";
 
 import { projects } from "@/data/projects";
 
@@ -64,7 +64,7 @@ export default function ProjectsPage() {
                                     </h3>
 
                                     <div className="flex items-center gap-2 text-[#1C6E3E] mb-4">
-                                        <TrendingUp className="w-4 h-4" />
+                                        <ChartLineData01Icon className="w-4 h-4" />
                                         <span className="text-sm font-medium">{project.stats}</span>
                                     </div>
 

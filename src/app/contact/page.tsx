@@ -6,32 +6,32 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { Location01Icon, Call02Icon, MailOpen01Icon, Clock01Icon, SentIcon } from "hugeicons-react";
 import { useState } from "react";
 import { sendEmail } from "./actions";
 
 
 const contactInfo = [
     {
-        icon: MapPin,
+        icon: Location01Icon,
         title: "Adresse",
         content: "Rabat, Maroc",
         subContent: "Quartier Industriel",
     },
     {
-        icon: Phone,
+        icon: Call02Icon,
         title: "Téléphone",
         content: "05 37 28 11 11",
-        subContent: "Lun-Ven 08h-18h",
+        subContent: "Lun-Ven 09h-17h",
     },
     {
-        icon: Mail,
+        icon: MailOpen01Icon,
         title: "Email",
         content: "contact@hay2010.ma",
         subContent: "Réponse sous 24h",
     },
     {
-        icon: Clock,
+        icon: Clock01Icon,
         title: "Horaires",
         content: "08:00 - 18:00",
         subContent: "Lundi au Vendredi",
@@ -145,7 +145,7 @@ export default function ContactPage() {
                                                 "Envoi en cours…"
                                             ) : (
                                                 <>
-                                                    <Send className="w-4 h-4 mr-2" />
+                                                    <SentIcon className="w-4 h-4 mr-2" />
                                                     Envoyer le Message
                                                 </>
                                             )}
@@ -185,7 +185,7 @@ export default function ContactPage() {
                             <Card className="overflow-hidden border-border/50">
                                 <div className="h-64 bg-gradient-to-br from-[#31548E] to-[#1a3a5c] flex items-center justify-center">
                                     <div className="text-center text-white">
-                                        <MapPin className="w-12 h-12 mx-auto mb-4 opacity-50" />
+                                        <Location01Icon className="w-12 h-12 mx-auto mb-4 opacity-50" />
                                         <p className="text-lg font-medium">Rabat, Maroc</p>
                                         <p className="text-sm text-white/60">Quartier Industriel</p>
                                     </div>

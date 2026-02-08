@@ -1,19 +1,19 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
-    Thermometer,
-    Sun,
-    Lightbulb,
-    Zap,
-    Building2,
-    Settings,
-    CheckCircle
-} from "lucide-react";
+    ThermometerIcon,
+    Sun03Icon,
+    BulbIcon,
+    FlashIcon,
+    Building02Icon,
+    Settings01Icon,
+    CheckmarkCircle01Icon
+} from "hugeicons-react";
 
 const services = [
     {
         id: "climatique",
-        icon: Thermometer,
+        icon: ThermometerIcon,
         title: "Génie Climatique (CVC)",
         description: "Conception et installation de systèmes de chauffage, ventilation et climatisation pour bâtiments industriels et tertiaires.",
         color: "from-blue-500 to-cyan-500",
@@ -28,7 +28,7 @@ const services = [
     },
     {
         id: "energie",
-        icon: Sun,
+        icon: Sun03Icon,
         title: "Énergies Renouvelables",
         description: "Solutions photovoltaïques et efficacité énergétique pour réduire votre empreinte carbone et vos coûts d'exploitation.",
         color: "from-yellow-500 to-orange-500",
@@ -43,7 +43,7 @@ const services = [
     },
     {
         id: "eclairage",
-        icon: Lightbulb,
+        icon: BulbIcon,
         title: "Éclairage Public & Urbain",
         description: "Installation et maintenance d'éclairage public LED intelligent pour communes et zones urbaines. Conformité ONEE garantie.",
         color: "from-amber-500 to-yellow-500",
@@ -58,7 +58,7 @@ const services = [
     },
     {
         id: "electrification",
-        icon: Zap,
+        icon: FlashIcon,
         title: "Électrification HTA/BT",
         description: "Réseaux de distribution électrique haute et basse tension, postes de transformation, électrification rurale.",
         color: "from-[#31548E] to-blue-500",
@@ -73,7 +73,7 @@ const services = [
     },
     {
         id: "industriel",
-        icon: Building2,
+        icon: Building02Icon,
         title: "Projets Industriels & Tertiaires",
         description: "Installations électriques complètes pour usines, entrepôts, centres commerciaux et immeubles de bureaux.",
         color: "from-gray-600 to-gray-500",
@@ -88,7 +88,7 @@ const services = [
     },
     {
         id: "maintenance",
-        icon: Settings,
+        icon: Settings01Icon,
         title: "Maintenance & SAV",
         description: "Contrats de maintenance préventive et curative pour garantir la performance et la durabilité de vos installations.",
         color: "from-green-500 to-emerald-500",
@@ -153,7 +153,7 @@ export default function ServicesPage() {
                                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                         {service.features.map((feature, featureIndex) => (
                                             <li key={featureIndex} className="flex items-start gap-3">
-                                                <CheckCircle className="w-5 h-5 text-[#1C6E3E] shrink-0 mt-0.5" />
+                                                <CheckmarkCircle01Icon className="w-5 h-5 text-[#1C6E3E] shrink-0 mt-0.5" />
                                                 <span className="text-sm text-muted-foreground">
                                                     {feature}
                                                 </span>

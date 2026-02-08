@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronDown, TrendingUp } from "lucide-react";
+import { ArrowDown01Icon, ChartLineData01Icon } from "hugeicons-react";
 
 const projects = [
     {
@@ -51,7 +51,7 @@ export function ProjectsSection() {
                     )}
                     <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 pt-20">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full text-sm text-[#5c5e62] mb-8">
-                            <TrendingUp className="w-4 h-4" />
+                            <ChartLineData01Icon className="w-4 h-4" />
                             {project.category}
                         </div>
                         <h2 className={`text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-4 ${project.image ? 'text-white' : 'text-[#171a20]'}`}>
@@ -83,7 +83,7 @@ export function ProjectsSection() {
                     {/* Scroll indicator */}
                     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce empty:hidden">
                         {projects.indexOf(project) < projects.length - 1 && (
-                            <ChevronDown className="w-8 h-8 text-[#5c5e62]" aria-hidden="true" />
+                            <ArrowDown01Icon className="w-8 h-8 text-[#5c5e62]" aria-hidden="true" />
                         )}
                     </div>
                 </section>

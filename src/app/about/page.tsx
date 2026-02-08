@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Target, Award, History } from "lucide-react";
+import { UserMultipleIcon, Target01Icon, Award01Icon } from "hugeicons-react";
 
 const milestones = [
     { year: "2004", title: "Création de HAY 2010", description: "Fondation de l'entreprise à Rabat" },
@@ -13,17 +13,17 @@ const milestones = [
 
 const values = [
     {
-        icon: Users,
+        icon: UserMultipleIcon,
         title: "Équipe Qualifiée",
         description: "Plus de 100 collaborateurs formés et certifiés pour garantir des prestations de qualité.",
     },
     {
-        icon: Target,
+        icon: Target01Icon,
         title: "Excellence Opérationnelle",
         description: "Engagement total envers la qualité, le respect des délais et la satisfaction client.",
     },
     {
-        icon: Award,
+        icon: Award01Icon,
         title: "Certifications",
         description: "Agréé ONEE et qualifié par le Ministère de l'Équipement pour les marchés publics.",
     },

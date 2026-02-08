@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle } from "lucide-react";
+import { CheckmarkCircle01Icon } from "hugeicons-react";
 
 const values = [
     {
@@ -66,7 +66,7 @@ export function ValuesSection() {
                             <ul className="space-y-3 text-left">
                                 {value.points.map((point, pointIndex) => (
                                     <li key={pointIndex} className="flex items-start gap-3">
-                                        <CheckCircle className="w-5 h-5 text-[#1C6E3E] shrink-0 mt-0.5" />
+                                        <CheckmarkCircle01Icon className="w-5 h-5 text-[#1C6E3E] shrink-0 mt-0.5" />
                                         <span className="text-muted-foreground text-sm">
                                             {point}
                                         </span>

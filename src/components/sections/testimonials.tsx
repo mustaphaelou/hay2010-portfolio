@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Quote, ChevronDown } from "lucide-react";
+import { QuoteDownIcon, ArrowDown01Icon } from "hugeicons-react";
 
 const testimonials = [
     {
@@ -36,7 +36,7 @@ export function TestimonialsSection() {
                             key={testimonial.author}
                             className="bg-white p-8 rounded-sm shadow-sm"
                         >
-                            <Quote className="w-8 h-8 text-[#5c5e62]/30 mb-6" />
+                            <QuoteDownIcon className="w-8 h-8 text-[#5c5e62]/30 mb-6" />
                             <p className="text-[#171a20] mb-6 leading-relaxed">
                                 &ldquo;{testimonial.quote}&rdquo;
                             </p>

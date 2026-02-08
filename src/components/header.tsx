@@ -4,13 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X } from "lucide-react";
+import { Menu01Icon, Cancel01Icon } from "hugeicons-react";
 
 const navigation = [
     { name: "Services", href: "/services" },
     { name: "Réalisations", href: "/projects" },
     { name: "Clients", href: "/clients" },
     { name: "Qualifications", href: "/qualifications" },
+    { name: "Recrutement", href: "/recrutement" },
     { name: "À Propos", href: "/about" },
     { name: "Zones", href: "/zones" },
 ];
@@ -77,7 +78,7 @@ export function Header() {
                     <Sheet open={isOpen} onOpenChange={setIsOpen}>
                         <SheetTrigger asChild className="lg:hidden">
                             <button className="p-2">
-                                <Menu className={`w-6 h-6 ${isScrolled ? "text-[#171a20]" : "text-[#171a20]"}`} />
+                                <Menu01Icon className={`w-6 h-6 ${isScrolled ? "text-[#171a20]" : "text-[#171a20]"}`} />
                             </button>
                         </SheetTrigger>
                         <SheetContent side="right" className="w-full max-w-full bg-white border-0 p-0">
@@ -92,7 +93,7 @@ export function Header() {
                                         className="h-8 w-auto"
                                     />
                                     <button onClick={() => setIsOpen(false)}>
-                                        <X className="w-6 h-6 text-[#171a20]" />
+                                        <Cancel01Icon className="w-6 h-6 text-[#171a20]" />
                                     </button>
                                 </div>
 

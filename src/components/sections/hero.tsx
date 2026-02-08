@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
+import { ArrowDown01Icon } from "hugeicons-react";
 
 export function HeroSection() {
     const scrollToNext = () => {
@@ -59,7 +59,7 @@ export function HeroSection() {
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce"
                 aria-label="Défiler vers le bas"
             >
-                <ChevronDown className="w-8 h-8 text-[#5c5e62]" />
+                <ArrowDown01Icon className="w-8 h-8 text-[#5c5e62]" />
             </button>
         </section>
     );

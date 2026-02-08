@@ -1,46 +1,46 @@
 "use client";
 
 import Link from "next/link";
-import { Thermometer, Sun, Lightbulb, Zap, Building2, Settings, ChevronDown } from "lucide-react";
+import { ThermometerIcon, Sun03Icon, BulbIcon, FlashIcon, Building02Icon, Settings01Icon, ArrowDown01Icon } from "hugeicons-react";
 
 const services = [
     {
-        icon: Thermometer,
+        icon: ThermometerIcon,
         title: "Génie Climatique",
         subtitle: "CVC & Ventilation",
         href: "/services#climatique",
         bg: "from-blue-50 to-cyan-50",
     },
     {
-        icon: Sun,
+        icon: Sun03Icon,
         title: "Énergies Renouvelables",
         subtitle: "Solaire & Efficacité",
         href: "/services#energie",
         bg: "from-amber-50 to-orange-50",
     },
     {
-        icon: Lightbulb,
+        icon: BulbIcon,
         title: "Éclairage Public",
         subtitle: "LED & Télégestion",
         href: "/services#eclairage",
         bg: "from-yellow-50 to-amber-50",
     },
     {
-        icon: Zap,
+        icon: FlashIcon,
         title: "Électrification",
         subtitle: "HTA/BT & Postes",
         href: "/services#electrification",
         bg: "from-indigo-50 to-blue-50",
     },
     {
-        icon: Building2,
+        icon: Building02Icon,
         title: "Projets Industriels",
         subtitle: "TGBT & Distribution",
         href: "/services#industriel",
         bg: "from-slate-50 to-gray-100",
     },
     {
-        icon: Settings,
+        icon: Settings01Icon,
         title: "Maintenance",
         subtitle: "SAV & Contrats",
         href: "/services#maintenance",
@@ -90,7 +90,7 @@ export function ServicesSection() {
                     {/* Scroll indicator */}
                     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce empty:hidden">
                         {services.indexOf(service) < services.length - 1 && (
-                            <ChevronDown className="w-8 h-8 text-[#5c5e62]" aria-hidden="true" />
+                            <ArrowDown01Icon className="w-8 h-8 text-[#5c5e62]" aria-hidden="true" />
                         )}
                     </div>
                 </section>

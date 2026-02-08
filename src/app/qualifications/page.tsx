@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { CheckCircle } from "lucide-react";
+import { CheckmarkCircle01Icon } from "hugeicons-react";
 
 const qualifications = [
     {
@@ -89,7 +89,7 @@ export default function QualificationsPage() {
                                     <ul className="space-y-4">
                                         {qual.items.map((item, itemIndex) => (
                                             <li key={itemIndex} className="flex items-start gap-3">
-                                                <CheckCircle className="w-5 h-5 text-[#1C6E3E] shrink-0 mt-0.5" />
+                                                <CheckmarkCircle01Icon className="w-5 h-5 text-[#1C6E3E] shrink-0 mt-0.5" />
                                                 <div>
                                                     <div className="font-medium text-foreground">
                                                         {item.title}

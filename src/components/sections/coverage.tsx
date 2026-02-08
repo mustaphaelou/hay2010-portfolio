@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { MapPin } from "lucide-react";
+import { Location01Icon } from "hugeicons-react";
 
 const cities = [
     "Rabat", "Casablanca", "Marrakech", "Fès", "Tanger", "Agadir",
@@ -14,7 +14,7 @@ export function CoverageSection() {
             {/* Content */}
             <div className="flex-1 flex flex-col items-center justify-center px-6 pt-20">
                 <div className="w-16 h-16 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center mb-8 shadow-lg">
-                    <MapPin className="w-8 h-8 text-[#171a20]" />
+                    <Location01Icon className="w-8 h-8 text-[#171a20]" />
                 </div>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#171a20] tracking-tight mb-4 text-center">
                     Couverture Nationale

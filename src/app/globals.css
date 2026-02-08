@@ -304,3 +304,37 @@ html {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Outline Text Utility */
+.outline-text-white {
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+}
+
+/* Grid Pattern Background */
+.pattern-grid-lg {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Animation delay utilities for recruitment page */
+.animate-delay-pulse-500 {
+  animation-delay: 0.5s;
+}
+
+.animate-delay-pulse-1000 {
+  animation-delay: 1s;
+}
+
+.animate-delay-fade-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-fade-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-fade-500 {
+  animation-delay: 0.5s;
+}
