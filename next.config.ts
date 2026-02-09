@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         hostname: 'www.tgcc.ma',
         pathname: '/dataup/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
     ],
   },
 };
