@@ -1,4 +1,5 @@
-"use client";
+
+
 
 import Link from "next/link";
 import { QuoteDownIcon, ArrowDown01Icon } from "hugeicons-react";

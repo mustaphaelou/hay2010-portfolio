@@ -140,6 +140,7 @@ export function Hay2010Slider({
                             fill
                             className="object-cover"
                             priority={index === 0}
+                            sizes="100vw"
                         />
                     ) : null}
                     {/* Gradient overlay for better text readability */}

@@ -206,6 +206,10 @@ html {
   animation: float 3s ease-in-out infinite;
 }
 
+.will-change-transform {
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
 
   .animate-fade-up,

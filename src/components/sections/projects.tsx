@@ -1,6 +1,5 @@
-"use client";
-
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowDown01Icon, ChartLineData01Icon } from "hugeicons-react";
 
 const projects = [
@@ -41,10 +40,12 @@ export function ProjectsSection() {
                 >
                     {project.image && (
                         <div className="absolute inset-0 z-0">
-                            <img
+                            <Image
                                 src={project.image}
                                 alt={project.title}
-                                className="w-full h-full object-cover"
+                                fill
+                                className="object-cover"
+                                sizes="100vw"
                             />
                             <div className="absolute inset-0 bg-black/40" />
                         </div>

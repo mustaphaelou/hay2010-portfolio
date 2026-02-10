@@ -1,4 +1,5 @@
-"use client";
+
+
 
 import Link from "next/link";
 import { ThermometerIcon, Sun03Icon, BulbIcon, FlashIcon, Building02Icon, Settings01Icon, ArrowDown01Icon } from "hugeicons-react";
