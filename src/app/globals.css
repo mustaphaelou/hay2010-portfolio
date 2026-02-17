@@ -50,7 +50,7 @@
 
 /* Tesla-Inspired Dark Theme */
 :root {
-  --radius: 0.25rem;
+  --radius: 0.5rem;
 
   /* Brand Colors */
   --brand-primary: #171a20;
@@ -69,8 +69,8 @@
   --secondary-foreground: oklch(0.12 0 0);
   --muted: oklch(0.96 0 0);
   --muted-foreground: oklch(0.45 0 0);
-  --accent: oklch(0.55 0.15 260);
-  --accent-foreground: oklch(0.99 0 0);
+  --accent: oklch(0.96 0 0);
+  --accent-foreground: oklch(0.12 0 0);
   --destructive: oklch(0.55 0.22 28);
   --border: oklch(0.92 0 0);
   --input: oklch(0.92 0 0);
@@ -105,7 +105,7 @@
   --secondary-foreground: oklch(0.95 0 0);
   --muted: oklch(0.2 0 0);
   --muted-foreground: oklch(0.6 0 0);
-  --accent: oklch(0.55 0.15 260);
+  --accent: oklch(0.2 0 0);
   --accent-foreground: oklch(0.95 0 0);
   --destructive: oklch(0.55 0.22 28);
   --border: oklch(0.25 0 0);
@@ -130,7 +130,7 @@
   h6 {
     font-family: var(--font-outfit), 'Outfit', sans-serif;
     font-weight: 600;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     text-wrap: balance;
   }
 
@@ -138,6 +138,19 @@
   :focus-visible {
     @apply outline-none ring-2 ring-ring ring-offset-2;
   }
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm;
+}
+
+.glass-dark {
+  @apply bg-black/40 backdrop-blur-md border border-white/10 shadow-lg;
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300;
 }
 
 /* Tesla-style Full Screen Sections */
@@ -159,7 +172,7 @@ html {
   scroll-snap-align: start;
 }
 
-/* Tesla-style animations */
+/* Premium Animations */
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -190,20 +203,52 @@ html {
   }
 
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(62, 106, 225, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(62, 106, 225, 0.6);
   }
 }
 
 .animate-fade-up {
-  animation: fade-up 1s ease-out forwards;
+  animation: fade-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .animate-fade-in {
-  animation: fade-in 1.2s ease-out forwards;
+  animation: fade-in 1s ease-out forwards;
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+.animate-glow {
+  animation: glow-pulse 3s infinite;
 }
 
 .will-change-transform {
@@ -214,7 +259,9 @@ html {
 
   .animate-fade-up,
   .animate-fade-in,
-  .animate-bounce {
+  .animate-float,
+  .animate-shimmer,
+  .animate-glow {
     animation: none;
     opacity: 1;
     transform: none;
@@ -241,30 +288,27 @@ html {
   animation-delay: 0.5s;
 }
 
-/* Tesla-style buttons */
-.btn-tesla {
-  @apply px-6 py-2 text-sm font-medium rounded-sm transition-all duration-300;
+/* Premium Buttons */
+.btn-primary {
+  @apply px-6 py-2.5 bg-[#171a20] text-white text-sm font-medium rounded-md shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300;
 }
 
-.btn-tesla-primary {
-  @apply bg-[#171a20] text-white hover:bg-[#000];
+.btn-secondary {
+  @apply px-6 py-2.5 bg-white text-[#171a20] border border-gray-200 text-sm font-medium rounded-md shadow-sm hover:bg-gray-50 hover:border-gray-300 hover:shadow-md transition-all duration-300;
 }
 
-.btn-tesla-secondary {
-  @apply bg-white/70 text-[#171a20] backdrop-blur-sm hover:bg-white;
-}
-
-.btn-tesla-outline {
-  @apply border border-[#171a20]/30 text-[#171a20] hover:border-[#171a20] hover:bg-[#171a20] hover:text-white;
+.btn-gradient {
+  background: linear-gradient(135deg, #171a20 0%, #3e6ae1 100%);
+  @apply px-6 py-2.5 text-white text-sm font-medium rounded-md shadow-lg hover:shadow-xl hover:brightness-110 transition-all duration-300;
 }
 
 /* Gradient overlays */
 .gradient-overlay {
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
 }
 
-.gradient-overlay-top {
-  background: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+.gradient-overlay-subtle {
+  background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.4) 100%);
 }
 
 /* Noise texture overlay */
@@ -282,79 +326,28 @@ html {
   z-index: 1;
 }
 
-/* Electric glow effects */
-.glow-blue {
-  box-shadow: 0 0 20px rgba(62, 106, 225, 0.3), 0 0 40px rgba(62, 106, 225, 0.1);
-}
-
-.glow-orange {
-  box-shadow: 0 0 20px rgba(243, 112, 33, 0.3), 0 0 40px rgba(243, 112, 33, 0.1);
-}
-
-/* Enhanced shadow system */
-.shadow-electric {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06),
-    0 0 0 1px rgba(62, 106, 225, 0.05);
-}
-
-.shadow-electric-lg {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05),
-    0 0 0 1px rgba(62, 106, 225, 0.08);
-}
-
-/* Premium gradient backgrounds */
-.gradient-brand {
-  background: linear-gradient(135deg, #171a20 0%, #31548E 50%, #3e6ae1 100%);
-}
-
-.gradient-electric {
-  background: linear-gradient(135deg, #3e6ae1 0%, #00A9E0 100%);
-}
-
-.gradient-industrial {
-  background: linear-gradient(180deg, #171a20 0%, #2a2d34 100%);
-}
-
 /* Text gradient utility */
 .text-gradient {
-  background: linear-gradient(135deg, #3e6ae1 0%, #F37021 100%);
+  background: linear-gradient(135deg, #171a20 0%, #3e6ae1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Outline Text Utility */
-.outline-text-white {
-  color: transparent;
-  -webkit-text-stroke: 1px white;
+.text-gradient-light {
+  background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Grid Pattern Background */
-.pattern-grid-lg {
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px;
+.pattern-grid {
+  background-image: radial-gradient(rgba(23, 26, 32, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-/* Animation delay utilities for recruitment page */
-.animate-delay-pulse-500 {
-  animation-delay: 0.5s;
-}
-
-.animate-delay-pulse-1000 {
-  animation-delay: 1s;
-}
-
-.animate-delay-fade-200 {
-  animation-delay: 0.2s;
-}
-
-.animate-delay-fade-300 {
-  animation-delay: 0.3s;
-}
-
-.animate-delay-fade-500 {
-  animation-delay: 0.5s;
+.pattern-grid-dark {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
 }

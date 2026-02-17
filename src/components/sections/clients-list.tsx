@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Badge } from "@/components/ui/badge";
 
 const clients = [
     { name: "Bank Al Maghrib", logo: "https://www.tgcc.ma/dataup/2021/11/BankAlmaghreb-640x400-1.png" },
@@ -24,51 +25,52 @@ const clients = [
 
 export function ClientsList() {
     return (
-        <section className="py-24 bg-white">
-            <div className="container mx-auto px-6">
-                <header className="mb-16 text-center">
+        <section className="relative py-24 bg-gray-50 overflow-hidden">
+            <div className="absolute inset-0 pattern-grid opacity-10" />
+
+            <div className="container relative z-10 mx-auto px-6">
+                <header className="mb-16 text-center max-w-3xl mx-auto">
+                    <Badge variant="outline" className="mb-4 text-[#3e6ae1] border-[#3e6ae1] bg-blue-50">
+                        Nos Références
+                    </Badge>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-4xl font-medium text-[#171a20] mb-4"
+                        className="text-4xl md:text-5xl font-bold text-[#171a20] mb-6 tracking-tight"
                     >
-                        Ils nous font confiance
+                        Ils nous font <span className="text-gradient">Confiance</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-[#5c5e62] max-w-2xl mx-auto"
+                        className="text-lg text-[#5c5e62]"
                     >
                         Nous accompagnons les plus grandes institutions et entreprises marocaines dans leurs projets d'électrification, d'éclairage et de génie climatique.
                     </motion.p>
                 </header>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {clients.map((client, index) => (
                         <motion.div
                             key={client.name}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05 }}
-                            whileHover={{ scale: 1.05 }}
-                            className="group relative aspect-[3/2] flex items-center justify-center p-8 bg-[#f4f4f4] rounded-sm transition-all duration-300 hover:shadow-xl hover:bg-white"
+                            whileHover={{ y: -5 }}
+                            className="group relative h-32 flex items-center justify-center p-8 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-xl hover:border-blue-100 transition-all duration-300"
                         >
-                            <div className="relative w-full h-full filter grayscale group-hover:grayscale-0 transition-all duration-500 opacity-70 group-hover:opacity-100">
+                            <div className="relative w-full h-full filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
                                 <Image
                                     src={client.logo}
                                     alt={client.name}
                                     fill
-                                    className="object-contain p-4"
+                                    className="object-contain"
+                                    sizes="(max-width: 768px) 50vw, 25vw"
                                 />
-                            </div>
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/5 pointer-events-none">
-                                <span className="text-[10px] uppercase tracking-widest font-semibold text-[#171a20]">
-                                    {client.name}
-                                </span>
                             </div>
                         </motion.div>
                     ))}

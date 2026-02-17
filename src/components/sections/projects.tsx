@@ -1,94 +1,136 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowDown01Icon, ChartLineData01Icon } from "hugeicons-react";
+import { ArrowRight01Icon, Location01Icon } from "hugeicons-react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 const projects = [
     {
-        title: "Ville de Casablanca",
-        category: "Éclairage Public LED",
-        stats: "Luminaires ITALO & STYLO",
-        bg: "from-[#002a42] to-[#31548E]",
-        image: "/images/street-lighting/casablanca-lighting-1.jpg",
-    },
-    {
-        title: "Commune de Témara",
+        title: "Éclairage Public Casablanca",
         category: "Éclairage Public",
-        stats: "450 luminaires LED",
-        bg: "from-blue-100 to-slate-100",
+        location: "Casablanca, Maroc",
+        image: "/images/street-lighting/casablanca-lighting-1.jpg",
+        description: "Modernisation de l'éclairage public avec 450 luminaires LED et système de télégestion.",
+        tags: ["LED", "Télégestion", "Efficacité"],
     },
     {
         title: "Zone Industrielle Aïn Johra",
         category: "Électrification HTA",
-        stats: "12 km réseau • 8 postes",
-        bg: "from-green-50 to-emerald-100",
+        location: "Tiflet, Maroc",
+        image: "https://images.unsplash.com/photo-1563953247732-d851571d7023?auto=format&fit=crop&q=80&w=1600",
+        description: "Travaux d'électrification HTA/BT et éclairage public pour la zone industrielle.",
+        tags: ["HTA/BT", "Postes", "Industrie"],
     },
     {
         title: "Centre Commercial Marjane",
         category: "Génie Climatique",
-        stats: "15,000 m² climatisés",
-        bg: "from-cyan-50 to-blue-100",
+        location: "Rabat, Maroc",
+        image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1600",
+        description: "Installation complète du système CVC et désenfumage pour le centre commercial.",
+        tags: ["CVC", "Désenfumage", "Tertiaire"],
+    },
+    {
+        title: "Extension Réseau Électrique",
+        category: "Électrification",
+        location: "Région Nord",
+        image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1600",
+        description: "Extension et renforcement du réseau électrique rural sur 50km.",
+        tags: ["Réseau", "Rural", "Renforcement"],
     },
 ];
 
 export function ProjectsSection() {
     return (
-        <>
-            {projects.map((project) => (
-                <section
-                    key={project.title}
-                    className={`relative min-h-screen flex flex-col justify-between snap-section ${!project.image ? `bg-gradient-to-b ${project.bg}` : ''}`}
-                >
-                    {project.image && (
-                        <div className="absolute inset-0 z-0">
-                            <Image
-                                src={project.image}
-                                alt={project.title}
-                                fill
-                                className="object-cover"
-                                sizes="100vw"
-                            />
-                            <div className="absolute inset-0 bg-black/40" />
-                        </div>
-                    )}
-                    <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 pt-20">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full text-sm text-[#5c5e62] mb-8">
-                            <ChartLineData01Icon className="w-4 h-4" />
-                            {project.category}
-                        </div>
-                        <h2 className={`text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-4 ${project.image ? 'text-white' : 'text-[#171a20]'}`}>
-                            {project.title}
+        <section className="py-24 bg-white overflow-hidden" id="projects">
+            <div className="container mx-auto px-6">
+                {/* Header */}
+                <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div className="max-w-2xl">
+                        <Badge variant="outline" className="mb-4 text-[#3e6ae1] border-[#3e6ae1] bg-blue-50">
+                            Nos Réalisations
+                        </Badge>
+                        <h2 className="text-4xl md:text-5xl font-bold text-[#171a20] mb-4 tracking-tight">
+                            Des Projets d'Envergure <br />
+                            <span className="text-gradient">Qui Façonnent l'Avenir</span>
                         </h2>
-                        <p className={`text-lg md:text-xl ${project.image ? 'text-white/80' : 'text-[#5c5e62]'}`}>
-                            {project.stats}
+                        <p className="text-gray-500 text-lg">
+                            Découvrez nos interventions majeures à travers le Royaume.
                         </p>
                     </div>
 
-                    {/* CTA */}
-                    <div className="pb-24 px-6">
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Link
-                                href="/projects"
-                                className="w-full sm:w-64 py-3 px-6 bg-[#171a20] text-white text-sm font-medium text-center rounded-sm hover:bg-black transition-colors"
-                            >
-                                Voir Tous les Projets
-                            </Link>
-                            <Link
-                                href="/contact"
-                                className="w-full sm:w-64 py-3 px-6 bg-white/70 backdrop-blur-sm text-[#171a20] text-sm font-medium text-center rounded-sm hover:bg-white transition-colors"
-                            >
-                                Nous Contacter
-                            </Link>
-                        </div>
-                    </div>
+                    <Button asChild variant="outline" className="hidden md:flex gap-2 border-[#171a20] text-[#171a20] hover:bg-[#171a20] hover:text-white rounded-full">
+                        <Link href="/projects">
+                            Voir tous les projets <ArrowRight01Icon className="w-4 h-4" />
+                        </Link>
+                    </Button>
+                </div>
 
-                    {/* Scroll indicator */}
-                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce empty:hidden">
-                        {projects.indexOf(project) < projects.length - 1 && (
-                            <ArrowDown01Icon className="w-8 h-8 text-[#5c5e62]" aria-hidden="true" />
-                        )}
-                    </div>
-                </section>
-            ))}
-        </>
+                {/* Horizontal Scroll Container */}
+                <div className="flex overflow-x-auto pb-12 gap-8 snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide">
+                    {projects.map((project, index) => (
+                        <Card
+                            key={index}
+                            className="flex-none w-[85vw] md:w-[400px] snap-center group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                        >
+                            <CardContent className="p-0 relative h-[500px]">
+                                {/* Image Background */}
+                                <div className="absolute inset-0">
+                                    {project.image.includes('placeholder') ? (
+                                        <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                                            <span className="text-gray-400">Image: {project.title}</span>
+                                        </div>
+                                    ) : (
+                                        <Image
+                                            src={project.image}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                            sizes="(max-width: 768px) 100vw, 400px"
+                                        />
+                                    )}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                                </div>
+
+                                {/* Content Overlay */}
+                                <div className="absolute bottom-0 left-0 w-full p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                    <div className="flex items-center gap-2 mb-3 text-white/80 text-sm">
+                                        <Location01Icon className="w-4 h-4 text-[#3e6ae1]" />
+                                        {project.location}
+                                    </div>
+
+                                    <h3 className="text-2xl font-bold mb-2 leading-tight group-hover:text-[#3e6ae1] transition-colors">
+                                        {project.title}
+                                    </h3>
+
+                                    <p className="text-gray-300 text-sm mb-4 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                                        {project.description}
+                                    </p>
+
+                                    <div className="flex flex-wrap gap-2 mb-4">
+                                        {project.tags.map(tag => (
+                                            <span key={tag} className="text-xs px-2 py-1 bg-white/10 backdrop-blur-md rounded-md border border-white/20">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    <div className="w-full h-1 bg-[#3e6ae1] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                                </div>
+                            </CardContent>
+                        </Card>
+                    ))}
+                </div>
+
+                {/* Mobile View All Button */}
+                <div className="mt-8 text-center md:hidden">
+                    <Button asChild variant="outline" className="w-full gap-2 border-[#171a20] text-[#171a20] hover:bg-[#171a20] hover:text-white rounded-full">
+                        <Link href="/projects">
+                            Voir tous les projets <ArrowRight01Icon className="w-4 h-4" />
+                        </Link>
+                    </Button>
+                </div>
+            </div>
+        </section>
     );
 }

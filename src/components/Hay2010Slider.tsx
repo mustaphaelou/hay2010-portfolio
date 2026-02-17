@@ -183,7 +183,7 @@ export function Hay2010Slider({
                             {currentSlideData.primaryCTA && (
                                 <Button
                                     onClick={currentSlideData.primaryCTA.onClick}
-                                    className="bg-[#3e6ae1] hover:bg-[#2d5bd0] text-white px-8 py-6 text-base font-medium rounded-sm transition-all duration-300 min-w-[200px]"
+                                    className="rounded-full bg-[#171a20] hover:bg-[#3e6ae1] text-white px-8 py-6 text-base font-medium transition-all duration-300 min-w-[200px] shadow-lg hover:shadow-blue-500/25 hover:-translate-y-1"
                                 >
                                     {currentSlideData.primaryCTA.label}
                                 </Button>
@@ -192,7 +192,7 @@ export function Hay2010Slider({
                                 <Button
                                     onClick={currentSlideData.secondaryCTA.onClick}
                                     variant="outline"
-                                    className="bg-white/95 hover:bg-white text-[#171a20] border-0 px-8 py-6 text-base font-medium rounded-sm transition-all duration-300 min-w-[200px]"
+                                    className="rounded-full bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white hover:text-[#171a20] px-8 py-6 text-base font-medium transition-all duration-300 min-w-[200px]"
                                 >
                                     {currentSlideData.secondaryCTA.label}
                                 </Button>
